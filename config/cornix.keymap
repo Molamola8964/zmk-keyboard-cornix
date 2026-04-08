@@ -117,10 +117,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC    &kp X    &kp L   &kp D               &kp C        &kp V                                    &kp K           &kp Y         &kp O          &kp U    &kp SEMI  &kp BACKSLASH
-&kp LGUI   &kp N    &kp R   &kp T               &kp S        &kp G                                    &kp P           &kp H         &kp A          &kp E    &kp I     &kp MINUS
-&kp LALT   &kp B    &kp Q   &kp M               &kp W        &kp Z      &kp C_MUTE  &kp C_PLAY_PAUSE  &kp J           &kp F         &kp COMMA      &kp DOT  &kp FSLH  &kp APOS
-&kp LCTRL  &kp TAB  &tog 5  &Cangjie_Layer 4 0  &lt 2 ENTER  &kp SPACE                                &kp LEFT_SHIFT  &lt 3 DELETE  &kp LC(SPACE)  &none    &none     &mo 7
+&kp ESC    &kp X    &kp L   &kp D               &kp C        &kp V                                    &kp K           &kp Y            &kp O          &kp U    &kp SEMI  &kp BACKSLASH
+&kp LGUI   &kp N    &kp R   &kp T               &kp S        &kp G                                    &kp P           &kp H            &kp A          &kp E    &kp I     &kp MINUS
+&kp LALT   &kp B    &kp Q   &kp M               &kp W        &kp Z      &kp C_MUTE  &kp C_PLAY_PAUSE  &kp J           &kp F            &kp COMMA      &kp DOT  &kp FSLH  &kp APOS
+&kp LCTRL  &kp TAB  &tog 5  &Cangjie_Layer 4 0  &lt 2 ENTER  &kp SPACE                                &kp LEFT_SHIFT  &lt 3 BACKSPACE  &kp LC(SPACE)  &none    &none     &mo 7
             >;
 
             sensor-bindings =
