@@ -91,7 +91,7 @@
         cangjie_qwerty: cangjie_qwerty {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 1 &kp LC(C)>;
+            bindings = <&tog 1 &kp LC(K)>;
             label = "CANGJIE_QWERTY";
         };
 
