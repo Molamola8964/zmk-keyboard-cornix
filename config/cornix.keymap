@@ -81,6 +81,19 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
         };
+
+        toggle_on: toggle_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "TOGGLE_ON";
+            #binding-cells = <1>;
+        };
+
+        toggle_off: toggle_off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "TOGGLE_OFF";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -91,15 +104,22 @@
         cangjie_qwerty: cangjie_qwerty {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 1 &kp LC(K)>;
+            bindings = <&toggle_on 1 &kp LC(K)>;
             label = "CANGJIE_QWERTY";
         };
 
         english_gallium: english_gallium {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 1 &kp LC(E)>;
+            bindings = <&toggle_off 1 &kp LC(E)>;
             label = "ENGLISH_GALLIUM";
+        };
+
+        japanese_gallium: japanese_gallium {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&toggle_off 1 &kp LC(J)>;
+            label = "JAPANESE_GALLIUM";
         };
     };
 
@@ -162,10 +182,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans  &kp N6     &kp N7        &kp N8        &kp N9        &kp N0                    &none   &none           &none         &none         &kp SEMI   &kp BSLH
-&trans  &kp N1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                    &none   &kp LEFT_SHIFT  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp MINUS
-&trans  &kp GRAVE  &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT  &trans  &trans  &none   &none           &kp COMMA     &kp DOT       &kp FSLH   &kp APOS
-&trans  &none      &none         &trans        &trans        &trans                    &trans  &trans          &trans        &none         &none      &none
+&trans             &kp N6     &kp N7        &kp N8        &kp N9        &kp N0                    &none   &none           &none         &none         &kp SEMI   &kp BSLH
+&cangjie_qwerty    &kp N1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                    &none   &kp LEFT_SHIFT  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp MINUS
+&english_gallium   &kp GRAVE  &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT  &trans  &trans  &none   &none           &kp COMMA     &kp DOT       &kp FSLH   &kp APOS
+&japanese_gallium  &none      &none         &trans        &trans        &trans                    &trans  &trans          &trans        &none         &none      &none
             >;
 
             sensor-bindings =
